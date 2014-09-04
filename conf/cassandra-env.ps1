@@ -262,18 +262,20 @@ Function SetCassandraEnvironment
     $env:JVM_OPTS="$env:JVM_OPTS -XX:StringTableSize=1000003"
 
     # GC tuning options
-    $env:JVM_OPTS="$env:JVM_OPTS -XX:+UseParNewGC"
-    $env:JVM_OPTS="$env:JVM_OPTS -XX:+UseConcMarkSweepGC"
-    $env:JVM_OPTS="$env:JVM_OPTS -XX:+CMSParallelRemarkEnabled"
-    $env:JVM_OPTS="$env:JVM_OPTS -XX:SurvivorRatio=8"
-    $env:JVM_OPTS="$env:JVM_OPTS -XX:MaxTenuringThreshold=1"
-    $env:JVM_OPTS="$env:JVM_OPTS -XX:CMSInitiatingOccupancyFraction=75"
-    $env:JVM_OPTS="$env:JVM_OPTS -XX:+UseCMSInitiatingOccupancyOnly"
-    $env:JVM_OPTS="$env:JVM_OPTS -XX:+UseTLAB"
-    if (($env:JVM_VERSION.CompareTo("1.7") -eq 1) -and ($env:JVM_ARCH -eq "64-Bit"))
-    {
-        $env:JVM_OPTS="$env:JVM_OPTS -XX:+UseCondCardMark"
-    }
+    
+    $env:JVM_OPTS="$env:JVM_OPTS -XX:+UseG1GC"
+    #$env:JVM_OPTS="$env:JVM_OPTS -XX:+UseParNewGC"
+    #$env:JVM_OPTS="$env:JVM_OPTS -XX:+UseConcMarkSweepGC"
+    #$env:JVM_OPTS="$env:JVM_OPTS -XX:+CMSParallelRemarkEnabled"
+    #$env:JVM_OPTS="$env:JVM_OPTS -XX:SurvivorRatio=8"
+    #$env:JVM_OPTS="$env:JVM_OPTS -XX:MaxTenuringThreshold=1"
+    #$env:JVM_OPTS="$env:JVM_OPTS -XX:CMSInitiatingOccupancyFraction=75"
+    #$env:JVM_OPTS="$env:JVM_OPTS -XX:+UseCMSInitiatingOccupancyOnly"
+    #$env:JVM_OPTS="$env:JVM_OPTS -XX:+UseTLAB"
+    #if (($env:JVM_VERSION.CompareTo("1.7") -eq 1) -and ($env:JVM_ARCH -eq "64-Bit"))
+    #{
+    #    $env:JVM_OPTS="$env:JVM_OPTS -XX:+UseCondCardMark"
+    #}
 
     # GC logging options -- uncomment to enable
     # $env:JVM_OPTS="$env:JVM_OPTS -XX:+PrintGCDetails"
