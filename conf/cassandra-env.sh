@@ -209,6 +209,7 @@ JVM_OPTS="$JVM_OPTS -Xss256k"
 JVM_OPTS="$JVM_OPTS -XX:StringTableSize=1000003"
 
 # GC tuning options
+JVM_OPTS="$JVM_OPTS -XX:+UnlockExperimentalVMOptions"
 JVM_OPTS="$JVM_OPTS -XX:+UseG1GC"
 JVM_OPTS="$JVM_OPTS -XX:+ParallelRefProcEnabled"
 JVM_OPTS="$JVM_OPTS -XX:G1NewSizePercent=3"
