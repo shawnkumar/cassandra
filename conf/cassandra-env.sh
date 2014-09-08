@@ -209,7 +209,10 @@ JVM_OPTS="$JVM_OPTS -Xss256k"
 JVM_OPTS="$JVM_OPTS -XX:StringTableSize=1000003"
 
 # GC tuning options
-JVM_OPTS="$JVM_OPTS -XX:+UseG1GC" 
+JVM_OPTS="$JVM_OPTS -XX:+UseG1GC"
+JVM_OPTS="$JVM_OPTS -XX:+ParallelRefProcEnabled"
+JVM_OPTS="$JVM_OPTS -XX:G1NewSizePercent=3"
+JVM_OPTS="$JVM_OPTS -XX:ParallelGCThreads=28"
 #JVM_OPTS="$JVM_OPTS -XX:+UseParNewGC" 
 #JVM_OPTS="$JVM_OPTS -XX:+UseConcMarkSweepGC" 
 #JVM_OPTS="$JVM_OPTS -XX:+CMSParallelRemarkEnabled" 
