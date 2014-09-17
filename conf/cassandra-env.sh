@@ -176,7 +176,7 @@ JVM_OPTS="$JVM_OPTS -ea"
 JVM_OPTS="$JVM_OPTS -javaagent:$CASSANDRA_HOME/lib/jamm-0.2.6.jar"
 
 # some JVMs will fill up their heap when accessed via JMX, see CASSANDRA-6541
-JVM_OPTS="$JVM_OPTS -XX:+CMSClassUnloadingEnabled"
+#VM_OPTS="$JVM_OPTS -XX:+CMSClassUnloadingEnabled"
 
 # enable thread priorities, primarily so we can give periodic tasks
 # a lower priority to avoid interfering with client workload
@@ -189,8 +189,8 @@ JVM_OPTS="$JVM_OPTS -XX:ThreadPriorityPolicy=42"
 # stop-the-world GC pauses during resize, and so that we can lock the
 # heap in memory on startup to prevent any of it from being swapped
 # out.
-JVM_OPTS="$JVM_OPTS -Xms4G"
-JVM_OPTS="$JVM_OPTS -Xmx4G"
+JVM_OPTS="$JVM_OPTS -Xms16G"
+JVM_OPTS="$JVM_OPTS -Xmx16gG"
 #JVM_OPTS="$JVM_OPTS -Xmn3G"
 JVM_OPTS="$JVM_OPTS -XX:+HeapDumpOnOutOfMemoryError"
 
@@ -211,11 +211,15 @@ JVM_OPTS="$JVM_OPTS -XX:StringTableSize=1000003"
 # GC tuning options
 JVM_OPTS="$JVM_OPTS -XX:+UnlockExperimentalVMOptions"
 JVM_OPTS="$JVM_OPTS -XX:+UseG1GC"
-JVM_OPTS="$JVM_OPTS -XX:+ParallelRefProcEnabled"
-JVM_OPTS="$JVM_OPTS -XX:G1NewSizePercent=30"
-JVM_OPTS="$JVM_OPTS -XX:ParallelGCThreads=28"
-JVM_OPTS="$JVM_OPTS -XX:G1MaxNewSizePercent=60"
-JVM_OPTS="$JVM_OPTS -XX:MaxGCPauseMillis=100"
+
+#JVM_OPTS="$JVM_OPTS -XX:+ParallelRefProcEnabled"
+#JVM_OPTS="$JVM_OPTS -XX:G1NewSizePercent=30"
+#JVM_OPTS="$JVM_OPTS -XX:ParallelGCThreads=28"
+#JVM_OPTS="$JVM_OPTS -XX:G1MaxNewSizePercent=60"
+
+JVM_OPTS="$JVM_OPTS -XX:MaxGCPauseMillis=200"
+
+
 #JVM_OPTS="$JVM_OPTS -XX:+UseParNewGC" 
 #JVM_OPTS="$JVM_OPTS -XX:+UseConcMarkSweepGC" 
 #JVM_OPTS="$JVM_OPTS -XX:+CMSParallelRemarkEnabled" 
@@ -235,8 +239,8 @@ JVM_OPTS="$JVM_OPTS -XX:MaxGCPauseMillis=100"
 #fi
 
 # GC logging options -- uncomment to enable
-# JVM_OPTS="$JVM_OPTS -XX:+PrintGCDetails"
-# JVM_OPTS="$JVM_OPTS -XX:+PrintGCDateStamps"
+JVM_OPTS="$JVM_OPTS -XX:+PrintGCDetails"
+JVM_OPTS="$JVM_OPTS -XX:+PrintGCDateStamps"
 # JVM_OPTS="$JVM_OPTS -XX:+PrintHeapAtGC"
 # JVM_OPTS="$JVM_OPTS -XX:+PrintTenuringDistribution"
 # JVM_OPTS="$JVM_OPTS -XX:+PrintGCApplicationStoppedTime"
