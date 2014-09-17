@@ -190,7 +190,7 @@ JVM_OPTS="$JVM_OPTS -XX:ThreadPriorityPolicy=42"
 # heap in memory on startup to prevent any of it from being swapped
 # out.
 JVM_OPTS="$JVM_OPTS -Xms16G"
-JVM_OPTS="$JVM_OPTS -Xmx16gG"
+JVM_OPTS="$JVM_OPTS -Xmx16G"
 #JVM_OPTS="$JVM_OPTS -Xmn3G"
 JVM_OPTS="$JVM_OPTS -XX:+HeapDumpOnOutOfMemoryError"
 
