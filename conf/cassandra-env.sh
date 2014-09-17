@@ -242,6 +242,8 @@ JVM_OPTS="$JVM_OPTS -XX:MaxGCPauseMillis=200"
 JVM_OPTS="$JVM_OPTS -XX:+PrintGCDetails"
 JVM_OPTS="$JVM_OPTS -XX:+PrintGCDateStamps"
 JVM_OPTS="$JVM_OPTS -XX:+PrintHeapAtGC"
+JVM_OPTS="$JVM_OPTS -XX:+PrintAdaptiveSizePolicy"
+
 # JVM_OPTS="$JVM_OPTS -XX:+PrintTenuringDistribution"
 JVM_OPTS="$JVM_OPTS -XX:+PrintGCApplicationStoppedTime"
 # JVM_OPTS="$JVM_OPTS -XX:+PrintPromotionFailure"
