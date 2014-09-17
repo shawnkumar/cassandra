@@ -189,8 +189,8 @@ JVM_OPTS="$JVM_OPTS -XX:ThreadPriorityPolicy=42"
 # stop-the-world GC pauses during resize, and so that we can lock the
 # heap in memory on startup to prevent any of it from being swapped
 # out.
-JVM_OPTS="$JVM_OPTS -Xms16G"
-JVM_OPTS="$JVM_OPTS -Xmx16G"
+JVM_OPTS="$JVM_OPTS -Xms20G"
+JVM_OPTS="$JVM_OPTS -Xmx20G"
 #JVM_OPTS="$JVM_OPTS -Xmn3G"
 JVM_OPTS="$JVM_OPTS -XX:+HeapDumpOnOutOfMemoryError"
 
@@ -214,10 +214,12 @@ JVM_OPTS="$JVM_OPTS -XX:+UseG1GC"
 
 #JVM_OPTS="$JVM_OPTS -XX:+ParallelRefProcEnabled"
 #JVM_OPTS="$JVM_OPTS -XX:G1NewSizePercent=30"
-#JVM_OPTS="$JVM_OPTS -XX:ParallelGCThreads=28"
-#JVM_OPTS="$JVM_OPTS -XX:G1MaxNewSizePercent=60"
-
+JVM_OPTS="$JVM_OPTS -XX:ParallelGCThreads=28"
+#JVM_OPTS="$JVM_OPTS -XX:G1MaxNewSizePercent=75"
+JVM_OPTS="$JVM_OPTS -XX:InitiatingHeapOccupancyPercent=55"
 JVM_OPTS="$JVM_OPTS -XX:MaxGCPauseMillis=200"
+
+JVM_OPTS="$JVM_OPTS -XX:G1HeapRegionSize=8"
 
 
 #JVM_OPTS="$JVM_OPTS -XX:+UseParNewGC" 
