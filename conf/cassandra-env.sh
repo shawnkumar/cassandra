@@ -189,9 +189,9 @@ JVM_OPTS="$JVM_OPTS -XX:ThreadPriorityPolicy=42"
 # stop-the-world GC pauses during resize, and so that we can lock the
 # heap in memory on startup to prevent any of it from being swapped
 # out.
-JVM_OPTS="$JVM_OPTS -Xms10G"
-JVM_OPTS="$JVM_OPTS -Xmx10G"
-JVM_OPTS="$JVM_OPTS -Xmn1G"
+JVM_OPTS="$JVM_OPTS -Xms25G"
+JVM_OPTS="$JVM_OPTS -Xmx25G"
+
 JVM_OPTS="$JVM_OPTS -XX:+HeapDumpOnOutOfMemoryError"
 
 # set jvm HeapDumpPath with CASSANDRA_HEAPDUMP_DIR
@@ -213,9 +213,9 @@ JVM_OPTS="$JVM_OPTS -XX:+UnlockExperimentalVMOptions"
 JVM_OPTS="$JVM_OPTS -XX:+UseG1GC"
 
 #JVM_OPTS="$JVM_OPTS -XX:+ParallelRefProcEnabled"
-JVM_OPTS="$JVM_OPTS -XX:G1NewSizePercent=30"
+#JVM_OPTS="$JVM_OPTS -XX:G1NewSizePercent=30"
 JVM_OPTS="$JVM_OPTS -XX:ParallelGCThreads=28"
-JVM_OPTS="$JVM_OPTS -XX:G1MaxNewSizePercent=75"
+#JVM_OPTS="$JVM_OPTS -XX:G1MaxNewSizePercent=75"
 JVM_OPTS="$JVM_OPTS -XX:InitiatingHeapOccupancyPercent=55"
 JVM_OPTS="$JVM_OPTS -XX:MaxGCPauseMillis=200"
 
